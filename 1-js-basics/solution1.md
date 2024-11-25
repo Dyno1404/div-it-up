@@ -21,6 +21,9 @@ function myFunction(a, b) {
 gives output as 12
 
 
+In JavaScript, functions are standalone blocks of code that can be called independently, while methods are functions that are associated with and called on objects.
+
+
 <p>Call a function which performs a calculation and returns the result:</p>
 <p id="demo"></p>
 <script>
@@ -57,6 +60,38 @@ for (let grade of allStudents) {
 
 console.log(studentsWhoPass);
 
+function checkAgeWithLogicalOperators(age) {
+  let message;
+  
+  if (age >= 18 && age <= 65) {
+    message = "You are an adult.";
+  } else if (age > 65) {
+    message = "You are a senior citizen.";
+  } else {
+    message = "You are a minor.";
+  }
+  
+  return message;
+}
+
+console.log(checkAgeWithLogicalOperators(20)); // "You are an adult."
+console.log(checkAgeWithLogicalOperators(70)); // "You are a senior citizen."
+console.log(checkAgeWithLogicalOperators(10)); // "You are a minor."
+
+
+function checkAgeWithTernary(age) {
+  return age >= 18 && age <= 65 
+    ? "You are an adult." 
+    : age > 65 
+    ? "You are a senior citizen." 
+    : "You are a minor.";
+}
+
+console.log(checkAgeWithTernary(20)); // "You are an adult."
+console.log(checkAgeWithTernary(70)); // "You are a senior citizen."
+console.log(checkAgeWithTernary(10)); // "You are a minor."
+
+
 
 Assignment4:
 
@@ -68,3 +103,44 @@ Assignment4:
     }
   </script>
 </body>
+
+
+Using for loop
+const numbers = [1, 2, 3, 4, 5];
+let squared = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  squared.push(numbers[i] ** 2);
+}
+
+console.log(squared); // [1, 4, 9, 16, 25]
+
+
+Using for each
+const numbers = [1, 2, 3, 4, 5];
+let squared = [];
+
+numbers.forEach(num => {
+  squared.push(num ** 2);
+});
+
+console.log(squared); // [1, 4, 9, 16, 25]
+
+Using for-of loop
+const numbers = [1, 2, 3, 4, 5];
+let squared = [];
+
+for (const num of numbers) {
+  squared.push(num ** 2);
+}
+
+console.log(squared); // [1, 4, 9, 16, 25]
+
+
+Using map
+
+const numbers = [1, 2, 3, 4, 5];
+const squared = numbers.map(num => num ** 2);
+
+console.log(squared); // [1, 4, 9, 16, 25]
+
